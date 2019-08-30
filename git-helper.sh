@@ -65,3 +65,10 @@ do
 	count=$(($count+1))
 done
 
+function add_man_to_patch()
+{
+	man=$1
+	file=$2
+	#multi lines could seperate by \n
+	sed -i "/^---$/i $man" $file
+}
